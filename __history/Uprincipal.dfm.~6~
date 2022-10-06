@@ -88,15 +88,6 @@ object frm_principal: Tfrm_principal
     Font.Style = []
     ParentFont = False
   end
-  object txt_nome: TDBEdit
-    Left = 40
-    Top = 176
-    Width = 121
-    Height = 24
-    DataField = 'nome'
-    DataSource = U_dm.DataSource1
-    TabOrder = 0
-  end
   object txt_telefone: TDBEdit
     Left = 40
     Top = 232
@@ -104,25 +95,25 @@ object frm_principal: Tfrm_principal
     Height = 24
     DataField = 'telefone'
     DataSource = U_dm.DataSource1
+    TabOrder = 0
+  end
+  object txt_endereco: TDBEdit
+    Left = 40
+    Top = 344
+    Width = 121
+    Height = 24
+    DataField = 'endereco'
+    DataSource = U_dm.DataSource1
     TabOrder = 1
   end
   object txt_email: TDBEdit
     Left = 40
-    Top = 295
+    Top = 288
     Width = 121
     Height = 24
     DataField = 'email'
     DataSource = U_dm.DataSource1
     TabOrder = 2
-  end
-  object txt_endereco: TDBEdit
-    Left = 40
-    Top = 347
-    Width = 121
-    Height = 24
-    DataField = 'endereco'
-    DataSource = U_dm.DataSource1
-    TabOrder = 3
   end
   object txt_experiencia: TDBEdit
     Left = 40
@@ -131,7 +122,7 @@ object frm_principal: Tfrm_principal
     Height = 24
     DataField = 'experiencias'
     DataSource = U_dm.DataSource1
-    TabOrder = 4
+    TabOrder = 3
   end
   object txt_idioma: TDBEdit
     Left = 40
@@ -140,16 +131,16 @@ object frm_principal: Tfrm_principal
     Height = 24
     DataField = 'idiomas'
     DataSource = U_dm.DataSource1
-    TabOrder = 5
+    TabOrder = 4
   end
   object txt_formacao: TDBEdit
     Left = 40
     Top = 512
     Width = 481
     Height = 24
-    DataField = 'formacao'
+    DataField = 'nome'
     DataSource = U_dm.DataSource1
-    TabOrder = 6
+    TabOrder = 5
   end
   object btn_salvar: TButton
     Left = 74
@@ -157,7 +148,7 @@ object frm_principal: Tfrm_principal
     Width = 75
     Height = 25
     Caption = 'Salvar'
-    TabOrder = 7
+    TabOrder = 6
     OnClick = btn_salvarClick
   end
   object btn_gerar: TButton
@@ -166,24 +157,24 @@ object frm_principal: Tfrm_principal
     Width = 75
     Height = 25
     Caption = 'Gerar'
-    TabOrder = 8
+    TabOrder = 7
     OnClick = btn_gerarClick
   end
-  object btn_novo: TButton
-    Left = 77
-    Top = 760
-    Width = 75
-    Height = 25
-    Caption = 'Novo'
-    TabOrder = 9
-    OnClick = btn_novoClick
-  end
-  object txt_impressao: TEdit
-    Left = 272
-    Top = 704
+  object txt_impressao: TDBEdit
+    Left = 240
+    Top = 728
     Width = 121
     Height = 24
-    TabOrder = 10
-    Text = 'digite o telefone'
+    TabOrder = 8
+    Visible = False
+  end
+  object txt_nome: TDBEdit
+    Left = 40
+    Top = 176
+    Width = 121
+    Height = 24
+    DataField = 'nome'
+    DataSource = U_dm.DataSource1
+    TabOrder = 9
   end
 end

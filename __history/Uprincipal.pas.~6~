@@ -27,11 +27,9 @@ type
     btn_gerar: TButton;
     txt_impressao: TDBEdit;
     txt_nome: TDBEdit;
-    btn_novo: TButton;
 
     procedure btn_gerarClick(Sender: TObject);
     procedure btn_salvarClick(Sender: TObject);
-    procedure btn_novoClick(Sender: TObject);
   private
     procedure configbotoes;
     { Private declarations }
@@ -70,11 +68,6 @@ Open;
 U_dm.report_curriculo.LoadFromFile(GetCurrentDir + '\rel\rel_curriculo.fr3');
 U_dm.report_curriculo.ShowReport();
 end;
-end;
-
-procedure Tfrm_principal.btn_novoClick(Sender: TObject);
-begin
-u_dm.tb_curriculo.Insert;
 end;
 
 procedure Tfrm_principal.btn_salvarClick(Sender: TObject);

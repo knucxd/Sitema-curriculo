@@ -13,9 +13,9 @@ type
     lb_titulo: TLabel;
     txt_telefone: TDBEdit;
     lb_telefone: TLabel;
-    txt_email: TDBEdit;
-    lb_endereco: TLabel;
     txt_endereco: TDBEdit;
+    lb_endereco: TLabel;
+    txt_email: TDBEdit;
     lb_email: TLabel;
     txt_experiencia: TDBEdit;
     txt_exp: TLabel;
@@ -26,13 +26,10 @@ type
     lb_clique: TLabel;
     btn_salvar: TButton;
     btn_gerar: TButton;
-    btn_novo: TButton;
-    txt_impressao: TEdit;
+    txt_impressao: TDBEdit;
 
     procedure btn_gerarClick(Sender: TObject);
     procedure btn_salvarClick(Sender: TObject);
-    procedure btn_novoClick(Sender: TObject);
-
   private
     procedure configbotoes;
     { Private declarations }
@@ -64,18 +61,13 @@ SQL.Add('select * from curriculo');
 end
 else
 begin
-SQL.Add('select * from curriculo where telefone = :telefone');
-ParamByName('telefone').Value := StrToInt (txt_impressao.Text);
+SQL.Add('select * from curriculo where txt_impressao = : telefone');
+ParamByName('telefone').Value := inttostr(txt_telefone.Text);
 end;
 Open;
-U_dm.report_curriculo.LoadFromFile('C:\3-52 A BRABA\Dyanna\dyanna & alessandro\rel\rel_curriculo.fr3');
+U_dm.report_curriculo.LoadFromFile(GetCurrentDir + '\rel\rel_curriculo.fr3');
 U_dm.report_curriculo.ShowReport();
 end;
-end;
-
-procedure Tfrm_principal.btn_novoClick(Sender: TObject);
-begin
-u_dm.tb_curriculo.Insert;
 end;
 
 procedure Tfrm_principal.btn_salvarClick(Sender: TObject);
@@ -89,9 +81,5 @@ procedure Tfrm_principal.configbotoes;
 begin
  btn_salvar.Enabled := U_dm.tb_curriculo.State in [dsinsert, dsedit];
 end;
-
-
-
-
 
 end.

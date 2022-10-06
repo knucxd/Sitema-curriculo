@@ -160,6 +160,14 @@ object frm_principal: Tfrm_principal
     TabOrder = 7
     OnClick = btn_gerarClick
   end
+  object txt_impressao: TDBEdit
+    Left = 240
+    Top = 728
+    Width = 121
+    Height = 24
+    TabOrder = 8
+    Visible = False
+  end
   object txt_nome: TDBEdit
     Left = 40
     Top = 176
@@ -167,7 +175,7 @@ object frm_principal: Tfrm_principal
     Height = 24
     DataField = 'nome'
     DataSource = U_dm.DataSource1
-    TabOrder = 8
+    TabOrder = 9
   end
   object btn_novo: TButton
     Left = 96
@@ -175,15 +183,7 @@ object frm_principal: Tfrm_principal
     Width = 75
     Height = 25
     Caption = 'Novo'
-    TabOrder = 9
-    OnClick = btn_novoClick
-  end
-  object txt_impressao: TEdit
-    Left = 256
-    Top = 696
-    Width = 121
-    Height = 24
     TabOrder = 10
-    Text = 'digite seu numero'
+    OnClick = btn_novoClick
   end
 end

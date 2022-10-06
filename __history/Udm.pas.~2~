@@ -1,0 +1,60 @@
+unit Udm;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MySQL,
+  FireDAC.Phys.MySQLDef, FireDAC.VCLUI.Wait, FireDAC.Stan.Param, FireDAC.DatS,
+  FireDAC.DApt.Intf, FireDAC.DApt, Data.DB, FireDAC.Comp.Client,
+  FireDAC.Comp.DataSet;
+
+type
+  TU_dm = class(TDataModule)
+    FDConnection1: TFDConnection;
+    tb_curriculo: TFDTable;
+    FDQuery1: TFDQuery;
+    DataSource1: TDataSource;
+    Driver: TFDPhysMySQLDriverLink;
+    tb_curriculonome: TStringField;
+    tb_curriculotelefone: TStringField;
+    tb_curriculoemail: TStringField;
+    tb_curriculoformacao: TStringField;
+    tb_curriculoendereco: TStringField;
+    tb_curriculoexperiencias: TStringField;
+    tb_curriculoidiomas: TStringField;
+    sql_imprimir: TFDQuery;
+    procedure DataSource1DataChange(Sender: TObject; Field: TField);
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  U_dm: TU_dm;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+
+procedure TU_dm.DataModuleCreate(Sender: TObject);
+begin
+fdconnection1.Params.Database := 'curriculo';
+fdconnection1.Params.UserName := 'root';
+fdconnection1.Params.Password := '';
+
+fdconnection1.Connected:= true;
+
+driver.VendorLib := GetCurrentDir + '\lib\libmysql';
+
+tb_curriculo.TableName := 'curriculo';
+tb_curriculo.Active := true;
+end;
+
+end.

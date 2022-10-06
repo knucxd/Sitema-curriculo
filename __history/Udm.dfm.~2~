@@ -1,0 +1,84 @@
+object U_dm: TU_dm
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 360
+  Width = 534
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=curriculo'
+      'User_Name=root'
+      'DriverID=MySQL')
+    Connected = True
+    Left = 168
+    Top = 128
+  end
+  object tb_curriculo: TFDTable
+    Connection = FDConnection1
+    UpdateOptions.UpdateTableName = 'curriculo.curriculo'
+    TableName = 'curriculo.curriculo'
+    Left = 328
+    Top = 136
+    object tb_curriculonome: TStringField
+      FieldName = 'nome'
+      Origin = 'nome'
+      Required = True
+      Size = 50
+    end
+    object tb_curriculotelefone: TStringField
+      FieldName = 'telefone'
+      Origin = 'telefone'
+      Required = True
+    end
+    object tb_curriculoemail: TStringField
+      FieldName = 'email'
+      Origin = 'email'
+      Required = True
+      Size = 50
+    end
+    object tb_curriculoformacao: TStringField
+      FieldName = 'formacao'
+      Origin = 'formacao'
+      Required = True
+      Size = 50
+    end
+    object tb_curriculoendereco: TStringField
+      FieldName = 'endereco'
+      Origin = 'endereco'
+      Required = True
+      Size = 50
+    end
+    object tb_curriculoexperiencias: TStringField
+      FieldName = 'experiencias'
+      Origin = 'experiencias'
+      Required = True
+      Size = 50
+    end
+    object tb_curriculoidiomas: TStringField
+      FieldName = 'idiomas'
+      Origin = 'idiomas'
+      Required = True
+      Size = 50
+    end
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
+    Left = 288
+    Top = 56
+  end
+  object DataSource1: TDataSource
+    DataSet = tb_curriculo
+    OnDataChange = DataSource1DataChange
+    Left = 96
+    Top = 72
+  end
+  object Driver: TFDPhysMySQLDriverLink
+    VendorLib = 'C:\3-52 A BRABA\Dyanna\dyanna & alessandro\lib\libmySQL (4).dll'
+    Left = 72
+    Top = 176
+  end
+  object sql_imprimir: TFDQuery
+    Connection = FDConnection1
+    Left = 80
+    Top = 248
+  end
+end

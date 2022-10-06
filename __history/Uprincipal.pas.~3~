@@ -1,0 +1,45 @@
+unit Uprincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls;
+
+type
+  Tfrm_principal = class(TForm)
+    txt_nome: TDBEdit;
+    lb_nome: TLabel;
+    lb_titulo: TLabel;
+    txt_telefone: TDBEdit;
+    lb_telefone: TLabel;
+    txt_endereco: TDBEdit;
+    lb_endereco: TLabel;
+    txt_email: TDBEdit;
+    lb_email: TLabel;
+    txt_experiencia: TDBEdit;
+    txt_exp: TLabel;
+    txt_idioma: TDBEdit;
+    lb_idioma: TLabel;
+    txt_formacao: TDBEdit;
+    lb_formacao: TLabel;
+    lb_clique: TLabel;
+    btn_gerar: TButton;
+    procedure lb_cliqueClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_principal: Tfrm_principal;
+
+implementation
+
+{$R *.dfm}
+
+uses Udm;
+
+
+end.

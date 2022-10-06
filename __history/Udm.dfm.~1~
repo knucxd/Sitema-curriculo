@@ -1,0 +1,35 @@
+object U_dm: TU_dm
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 360
+  Width = 534
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=curriculo'
+      'User_Name=root'
+      'DriverID=MySQL')
+    Left = 168
+    Top = 128
+  end
+  object FDTable1: TFDTable
+    Connection = FDConnection1
+    Left = 320
+    Top = 136
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
+    Left = 288
+    Top = 56
+  end
+  object DataSource1: TDataSource
+    DataSet = FDTable1
+    OnDataChange = DataSource1DataChange
+    Left = 96
+    Top = 72
+  end
+  object Driver: TFDPhysMySQLDriverLink
+    VendorLib = 'C:\3-52 A BRABA\Dyanna\dyanna & alessandro\lib\libmySQL (4).dll'
+    Left = 72
+    Top = 176
+  end
+end
